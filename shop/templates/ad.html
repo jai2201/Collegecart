@@ -1,4 +1,5 @@
 {% extends 'index.html' %}
+{% load static %}
 {% load keytag %}
 {% block content %}
 
@@ -8,6 +9,14 @@
 	<title>Post your AD</title>
 </head>
 <style>
+
+.button{
+		background-color: #eb2f06;
+		cursor: pointer;
+	}
+	.button:hover{
+		background-color:#2f3542;
+	}
 .dropbtn {
   background-color: white;
   color: black;
@@ -47,18 +56,33 @@
 }
 </style>
 <body>
-	<div class="header" style="background-color: #ecf0f1; height:75px; width: 100%; font-size: 30px; font-family: serif;">COLLEGE CART</div>
-	<p style="font-size: 23px;font-family:sans-serif;line-height: 1.15;color: black; text-align: center;"><b>POST YOUR AD</b></p>
+	<div id="container1" style="background-color:#f5f6fa;">
+		<div class="headline" style="display: flex; flex-direction: row; justify-content: space-between;">
+		<div class="image" style="display: flex;"><img src="{% static './logo1.PNG' %}" style="width: 200px; height: 60px;">
+		</div>
+		<div class="tags" style="display: flex;">
+			<div class="icons" style="display: flex; flex-direction: row; justify-content: space-around;">
+				<div class="small1" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white;"><a href="{% url 'index' %}" style="text-decoration: none; color: white;">HOME</a></button></div>
+				<div class="small2" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white;"><a href="{% url 'ad' %}" style="text-decoration: none; color: white;">SELL</a></button></div>
+				<div class="small3" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white;"><a href="{% url 'about' %}" style="text-decoration: none; color: white;">ABOUT ME</a></button></div>
+				<div class="small4" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white;">PROFILE</button></div>
+				<div class="small5" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white;"><a href="{% url 'logout' %}" style="text-decoration: none; color: white;">LOGOUT</a></button></div>
+
+		</div>
+		</div>
+		</div>
+	</div>
+	<p style="font-size: 27px;font-family:sans-serif;line-height: 1.15;color: black; text-align: center;"><b>POST YOUR AD</b></p>
 	<center>
-	<div class="container" style="height: 600px; width: 800px; border: 1px solid gray; border-radius: 5px;">
-		<p style="text-align: left; margin-left: 25px; font-size: 18px; font-family: sans-serif;"><b>CHOOSE A CATEGORY</b></p>
-		<div class="names" style="height: 540px; width: 400px; border: 1px solid gray; margin-right: 605px;">
+	<div class="container" style="height: 400px; width: 501px; border: 1px solid gray; margin-left: 10px;;">
+		<p style="text-align: center; font-size: 15px; font-family: sans-serif;"><b>CHOOSE A CATEGORY</b></p>
+		<div class="names" style="height: 400px; width: 499px; border: 0px solid gray; margin-top: 50px;">
 			{% for x in cat %}
 			<div class="dropdown">
   				<button class="dropbtn">{{x.name}}</button>
   				<div class="dropdown-content">
   					{% for y in sub|lookup:x.id %}
-    				<a href="#">{{y.subcategoryname}}</a>
+    				<a href="{% url 'post' %}">{{y.subcategoryname}}</a>
     				{% endfor %}
   				</div>
 			</div>

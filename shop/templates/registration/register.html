@@ -1,0 +1,28 @@
+{% load static %}
+{% block content %}
+<html>
+<body style="background-color:whitesmoke">
+<center>
+        <div class="master" style="background-color: white; height: 450px; width: 500px; margin-top: 70px;">
+            <div class="image"><img src="{% static './logo1.PNG' %}" style="width: 290px; height: 90px; margin-top: 100px;">
+            </div>
+            <div class="container2">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                    <input type="hidden" name="csrfmiddlewaretoken" value="eCpIjogau5fo0sgmbDXg6tvmbmx4ijNSjkrjuMG7HmPvh5iemzYAuyWu0frEvjzj">
+                    <p><label for="id_username">Username:</label> <input type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus required id="id_username"></p>
+                    <p><label for="id_password1">Password:</label> <input type="password" name="password1" autocomplete="new-password" required id="id_password1"> </p>
+                    <p><label for="id_password2">Password confirmation:</label> <input type="password" name="password2" autocomplete="new-password" required id="id_password2"></p>
+                    <button value= "submit" style="margin-top: 20px; font-size: 20px; background-color: #00a8ff; color: white; border:0px; padding: 5px; border-radius: 20px; width: 200px; "><b>Register</b></button>
+                </form>
+                <p style="font-size:18px;">Already have an account? <a href="{% url 'login' %}" style="text-decoration: none;">Login Here</a></p> 
+
+            </div>
+        </div>
+</center>
+</body>
+</html>
+{% endblock %}
+
+
+

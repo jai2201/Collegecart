@@ -1,0 +1,161 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body style="background-color: #f5f6fa;">
+    <div id="container1" style="background-color:#f5f6fa;">
+        <div class="headline" style="display: flex; flex-direction: row; justify-content: space-between;">
+        <div class="image" style="display: flex;"><img src="{% static './logo1.PNG' %}" style="width: 200px; height: 60px;">
+        </div>
+        <div class="tags" style="display: flex;">
+            <div class="icons" style="display: flex; flex-direction: row; justify-content: space-around;">
+                <div class="small1" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white;"><a href="{% url 'index' %}" style="text-decoration: none; color: white;">HOME</a></button></div>
+                <div class="small2" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white;"><a href="{% url 'ad' %}" style="text-decoration: none; color: white;">SELL</a></button></div>
+                <div class="small3" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white;"><a href="{% url 'about' %}" style="text-decoration: none; color: white;">ABOUT ME</a></button></div>
+                <div class="small4" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white;">PROFILE</button></div>
+                <div class="small5" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white;"><a href="{% url 'logout' %}" style="text-decoration: none; color: white;">LOGOUT</a></button></div>
+
+        </div>
+        </div>
+        </div>
+    </div>
+    <div class="mastercontainer4" style="display: flex; flex-direction: row;">
+    <div class="split left" style="display: flex; flex-direction: row;">
+        <div class="centered">
+            <img src="{% static './Capture.PNG' %}" style="width: 300px; height: 250px; border-radius: 50%; margin-left: 280px; ">
+            <pre style="color: black; font-size: 14px; font-family:cursive; text-align: center;">
+                I am a fresher at IIT Roorkee , curently i am learning full-stack development who focuses on
+                writing clean, elegant and efficient code. For developing this site i have used HTML, CSS, JS as frontend tachnologies
+                and Python, Django framework as Backend Technologies. 
+                I am a keen learner of new frameworks which are used at industry level in MNCs.
+                I have also worked on other projects on Django framework where i used Django channels to create a real time chat application.
+
+                Let's Get in Touch-
+            </pre>
+            <div class="contact">
+                <head>
+
+                    <link href="https://fonts.googleapis.com/css?family=Raleway+Dots" rel="stylesheet" type="text/css">
+                    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+                    <style>
+                        html, body {
+  font-family: 'Raleway Dots', sans-serif;
+}
+
+section #services {
+  text-align: center;
+  transform: translatez(0);
+}
+section #services h2 {
+  margin: 30px 0px 20px;
+  color: #fff;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: center;
+}
+section #services li {
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  margin: 10px;
+  list-style: none;
+}
+section #services li div {
+  width: 40px;
+  height: 40px;
+  color: #74d4b3;
+  font-size: 2em;
+  text-align: center;
+  background-color: white;
+  transition: all 0.5s ease;
+}
+section #services li a {
+  color: #77cc6d;
+}
+section #services li div:hover {
+  transform: rotate(360deg);
+  border-radius: 100px;
+}
+section #services li span {
+  width: 50px;
+  height: 20px;
+  display: block;
+  padding: 5px 0px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1em;
+  text-align: center;
+}
+.credits a {
+  display: block;
+  text-align: center;
+  color: #74d4b3;
+  text-decoration: none;
+  padding: 5px;
+}
+                    </style>
+                </head>
+                  <section>
+                    <ul id="services">
+                      <li>
+                        <div class="facebook">
+                          <a href="https://www.facebook.com/jai22iitr" target="_blank">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="twitter">
+                          <a href="https://twitter.com/Jai81062202" target="_blank">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="youtube">
+                          <a href="https://www.youtube.com/channel/UChiRLY7qRGRQANylgU5yq-Q/featured" target="_blank">
+                            <i class="fa fa-youtube" aria-hidden="true"></i>
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="linkedin">
+                          <a href="https://www.linkedin.com/in/jai-soni-77758b202/" target="_blank">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="instagram">
+                          <a href="https://www.instagram.com/jai.soni22/" target="_blank">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="github">
+                          <a href="https://github.com/jai22-iitr" target="_blank">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </section>
+            </div>
+        </div>
+    </div>
+
+    <div class="split right" style="display: flex; flex-direction: row;">
+        <div class="centered1">
+            <img src="{% static './hlo.PNG' %}" style="height: 440px; width: 250px;margin-top: 20px ; margin-left:100px;"><br>
+        </div> 
+    </div>
+</body>
+</html> 
+
+{% endblock %}
+
+

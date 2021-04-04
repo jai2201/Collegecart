@@ -1,0 +1,24 @@
+{% load static %}
+{% block content %}
+<html>
+<body style="background-color:whitesmoke">
+<center>
+        <div class="master" style="background-color: white; height: 440px; width: 500px; margin-top: 70px;">
+            <div class="image"><img src="{% static './logo1.PNG' %}" style="width: 290px; height: 90px; margin-top: 100px;">
+            </div>
+            <div class="container2">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button value= "submit" style="margin-top: 20px; font-size: 20px; background-color: #00a8ff; color: white; border:0px; padding: 5px; border-radius: 20px; width: 200px; "><b>Login</b></button></br>
+                </form>
+                <p style="font-size:18px;">Don't have an account? <a href="{% url 'register' %}" style="text-decoration: none;">Register Here</a></p> 
+            </div>
+        </div>
+</center>
+</body>
+</html>
+{% endblock %}
+
+
+
