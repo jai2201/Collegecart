@@ -26,6 +26,11 @@ class item(models.Model):
 	available = models.BooleanField(default=True)
 	subcategoryname=models.ForeignKey(subcategory, on_delete=models.CASCADE)
 
+	def __str__(self):
+		return self.user
+
+
+
 
 
 

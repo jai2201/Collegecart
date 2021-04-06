@@ -54,4 +54,31 @@ def detailView(request,item_id):
 
 @login_required
 def profileView(request):
-	return render(request, 'profile.html')
+	logged_in_user = request.user
+	logged_in_user_items = item.objects.filter(user=logged_in_user)
+	return render(request, 'profile.html', {'items':logged_in_user_items})
+
+@login_required
+def bookView(request):
+	book_items = item.objects.filter(category__name = 'Books')
+	return render(request, 'book.html', {'items':book_items})
+
+@login_required
+def electronicView(request):
+	electronic_items = item.objects.filter(category__name = 'Electronics items')
+	return render(request, 'electronic.html', {'items':electronic_items})
+
+@login_required
+def sportsView(request):
+	sports_items = item.objects.filter(category__name = 'Sports material')
+	return render(request, 'sport.html', {'items':sports_items})
+
+@login_required
+def musicView(request):
+	music_items = item.objects.filter(category__name = 'Music items')
+	return render(request, 'musical.html', {'items':music_items})
+
+@login_required
+def hostelView(request):
+	hostel_items = item.objects.filter(category__name = 'Hostel stuff')
+	return render(request, 'hostel.html', {'items':hostel_items})

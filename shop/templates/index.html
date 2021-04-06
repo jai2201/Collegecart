@@ -30,7 +30,7 @@
 		<div class="small1" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white; "><a href="{% url 'index' %}" style="text-decoration: none; color: white;">HOME</a></button></div>
 		<div class="small2" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white;"><a href="{% url 'ad' %}" style="text-decoration: none; color: white;">SELL</a></button></div>
 		<div class="small3" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white;"><a href="{% url 'about' %}" style="text-decoration: none; color: white;">ABOUT ME</a></button></div>
-		<div class="small4" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white;">PROFILE</button></div>
+		<div class="small4" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white;"><a href="{% url 'profile' %}" style="text-decoration: none; color: white;">PROFILE</a></button></div>
 		<div class="small5" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white;"><a href="{% url 'logout' %}" style="text-decoration: none; color: white;">LOGOUT</a></button></div>
 
 	</div>
@@ -38,10 +38,18 @@
 </div>
 </div>
 
-
 <div class="main">
 	<img src="{% static './uu.PNG'%}" style="width: 100%; height: 250px; margin-top: 10px;">
 </div>
+<h1 style="font-size: 30px; text-align: center;"> Shop By Categories</h1>
+<div class="categories" style="display: flex; flex-direction: row; justify-content: space-around;">
+	<a href="books/" style="text-decoration: none; color: black;"><div id="books" style="border: 1px solid gray; height: 180px; width: 170px;"><img src="{% static './books.jpg'%}" style=" margin-top: 10px;margin-left: 20px;height: 120px; width: 120px;"><br><span style="margin-left:50px; font-size: 20px;"><b>Books</b></span></div></a>
+	<a href="hostel/" style="text-decoration: none; color: black;"><div id="hostel" style="border: 1px solid gray; height: 180px; width: 170px;"><img src="{% static './hostel.jpg'%}" style=" margin-top: 10px;margin-left: 20px;height: 120px; width: 120px;"><br><span style="margin-left:30px; font-size: 20px;"><b>Hostel stuff</b></span></div></a>
+	<a href="musical/" style="text-decoration: none; color: black;"><div id="music" style="border: 1px solid gray; height: 180px; width: 170px;"><img src="{% static './music.jpg'%}" style=" margin-top: 10px;margin-left: 20px;height: 120px; width: 120px;"><br><span style="margin-left:30px; font-size: 20px;"><b>Music items</b></span></div></a>
+	<a href="electronic/" style="text-decoration: none; color: black;"><div id="elec" style="border: 1px solid gray; height: 180px; width: 170px;"><img src="{% static './electronic.png'%}" style="margin-top: 10px; margin-left: 20px;height: 120px; width: 120px;"><br><span style="margin-left:40px; font-size: 20px;"><b>Electronic</b></span></div></a>
+	<a href="sports/" style="text-decoration: none; color: black;"><div id="sports" style="border: 1px solid gray; height: 180px; width: 170px;"><img src="{% static './sportsjpg.jpg'%}" style=" margin-top: 10px;margin-left: 20px;height: 120px; width: 120px;"><br><span style="margin-left:50px; font-size: 20px;"><b>Sports</b></span></div></a>
+</div>
+
 <p style="font-size: 25px; color: black; margin-left: 26px; margin-top: 15px;">Fresh recommendations</p>
 
 	<div class="row" style="margin-left: 5px;">
