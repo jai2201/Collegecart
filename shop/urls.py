@@ -10,4 +10,6 @@ urlpatterns = [
 	path('ad/' ,views.adView,name="ad"),
 	path('post/',views.formView,name="post"),
 	path('about/',views.aboutusView,name="about"),
+	path('profile/',views.profileView,name="profile"),
+	path('detail/<int:item_id>/',views.detailView,name="detail"),
 ]

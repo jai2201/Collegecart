@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
 class Category(models.Model):
 	name=models.CharField(max_length=100)
 	def __str__(self):
@@ -26,5 +25,7 @@ class item(models.Model):
 	description=models.CharField(max_length=1000, null=False, blank=False)
 	available = models.BooleanField(default=True)
 	subcategoryname=models.ForeignKey(subcategory, on_delete=models.CASCADE)
+
+
 
 

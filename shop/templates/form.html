@@ -18,94 +18,18 @@
             </div>
             </div>
         </div>
+        <p style="font-size: 23px;font-family:sans-serif;line-height: 1.15;color: black; text-align: center;  margin-top: 25px;"><b>POST YOUR AD</b></p>
+
         <div class="post">
             <center>
                 <form action="" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
-                        <input type="hidden" name="csrfmiddlewaretoken" value="FrtiHFG7nMJr2Jt8SoUuJfuCwENqmoSmpmBz4PXIKnsyWUQMxzdxrCdO8UH2J36q">
-                        <p><label for="id_user">User:</label> <select name="user" required id="id_user">
-                        <option value="" selected>---------</option>
-
-                        <option value="1">{{user.username}}</option>
-                        </select></p>
-                        <p> <input type="file" name="image" accept="image/*" required id="id_image"></p>
-                        <p><label for="id_title">Title:</label> <input type="text" name="title" maxlength="1000" required id="id_title"></p>
-                        <p><label for="id_price">Price:</label> <input type="number" name="price" step="0.01" required id="id_price"></p>
-                        <p><label for="id_category">Category:</label> <select name="category" required id="id_category">
-                        <option value="" selected>---------</option>
-
-                        <option value="8">Books</option>
-
-                        <option value="10">Hostel stuff</option>
-
-                        <option value="11">Musical instruments</option>
-
-                        <option value="12">Sports material</option>
-
-                        <option value="14">Electronics items</option>
-
-                        </select></p>
-                        <p><label for="id_address">Address:</label> <input type="text" name="address" maxlength="1000" required id="id_address"></p>
-                        <p><label for="id_description">Description:</label> <input type="text" name="description" maxlength="1000" required id="id_description"></p>
-                        <p><label for="id_available">Available:</label> <input type="checkbox" name="available" id="id_available" checked></p>
-                        <p><label for="id_subcategoryname">Subcategoryname:</label> <select name="subcategoryname" required id="id_subcategoryname">
-                        <option value="" selected>---------</option>
-
-                        <option value="5">Books-Physics</option>
-
-                        <option value="6">Books-Material designing</option>
-
-                        <option value="7">Books-Probability and statistics</option>
-
-                        <option value="8">Books-Psychology</option>
-
-                        <option value="9">Books-Galaxy</option>
-
-                        <option value="10">Books-English</option>
-
-                        <option value="16">Hostel stuff-Daily necessaries</option>
-
-                        <option value="17">Hostel stuff-Geometric equipments</option>
-
-                        <option value="18">Musical instruments-Guitar</option>
-
-                        <option value="19">Musical instruments-Piano</option>
-
-                        <option value="20">Musical instruments-Dholak</option>
-
-                        <option value="21">Musical instruments-violin</option>
-
-                        <option value="22">Musical instruments-Congo</option>
-
-                        <option value="23">Sports material-Football</option>
-
-                        <option value="24">Sports material-Cricket</option>
-
-                        <option value="25">Sports material-Basketball</option>
-
-                        <option value="26">Sports material-Badminton</option>
-
-                        <option value="27">Sports material-Tennis</option>
-
-                        <option value="28">Sports material-Table tennis</option>
-
-                        <option value="29">Hostel stuff-Games</option>
-
-                        <option value="30">Electronics items-Laptop</option>
-
-                        <option value="31">Electronics items-Mobile</option>
-
-                        <option value="32">Electronics items-Earphones</option>
-
-                        <option value="33">Electronics items-Speaker</option>
-
-                        <option value="34">Hostel stuff-2nd Hand Cycles</option>
-
-                        </select></p>
-                    <button type="submit" style="padding: 10px; border: none; color: white; font-size: 20px; background-color: red; border-radius: 10px;;">Post</button>
+                    {{form.as_p}}
+                        <button type="submit" style="padding: 10px; border: none; color: lightslategrey; font-size: 20px; background-color: lightgrey; border-radius: 10px;;"><b>Post now</b></button>
                 </form>
             </center>
         </div>
     </body>
 </html>
 {% endblock %}
+

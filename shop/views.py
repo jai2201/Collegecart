@@ -3,6 +3,8 @@ from .models import Category , item, subcategory
 from .forms import ItemForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
 
 def registerView(request):
 	if request.method == "POST":
@@ -16,7 +18,9 @@ def registerView(request):
 
 @login_required
 def indexView(request):
-	return render(request, 'index.html')
+	img = item.objects.all()
+	final = img.order_by('-published_on')
+	return render(request, 'index.html',{'final':final})
 
 @login_required
 def adView(request):
@@ -41,3 +45,13 @@ def formView(request):
 def aboutusView(request):
 	return render(request, 'aboutus.html')
 
+
+@login_required
+def detailView(request,item_id):
+	img = item.objects.get(pk=item_id)
+	return render(request, 'detail.html',{'img':img})
+
+
+@login_required
+def profileView(request):
+	return render(request, 'profile.html')

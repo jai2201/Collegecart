@@ -1,0 +1,69 @@
+{% extends 'index.html'%}
+{% block content %}
+{% load static %}
+<style>
+    #btn1{
+        width: 360px;
+        background-color: darkgreen;
+        height: 40px;
+        margin-left: 24px;
+        border: none;
+        color: white;
+        border-radius: 4px;
+    }
+    #btn1:hover{
+        background-color: white;
+        color: black;
+        border-radius: 4px;
+        border: 4px solid black;
+    }
+</style>
+<div id="container1" style="background-color:#f5f6fa;">
+    <div class="headline" style="display: flex; flex-direction: row; justify-content: space-between;">
+    <div class="image" style="display: flex;"><img src="{% static './logo1.PNG' %}" style="width: 200px; height: 60px;">
+    </div>
+    <div class="tags" style="display: flex;">
+        <div class="icons" style="display: flex; flex-direction: row; justify-content: space-around;">
+            <div class="small1" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white; "><a href="{% url 'index' %}" style="text-decoration: none; color: white;">HOME</a></button></div>
+            <div class="small2" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white;"><a href="{% url 'ad' %}" style="text-decoration: none; color: white;">SELL</a></button></div>
+            <div class="small3" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white;"><a href="{% url 'about' %}" style="text-decoration: none; color: white;">ABOUT ME</a></button></div>
+            <div class="small4" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white;">PROFILE</button></div>
+            <div class="small5" style="display: flex;"><button class="button" style="border: none; padding: 10px; margin-right: 10px; height: 40px; margin-top: 9px; border-radius: 10px; color: white;"><a href="{% url 'logout' %}" style="text-decoration: none; color: white;">LOGOUT</a></button></div>               
+        </div>
+    </div>
+    </div>
+</div>
+<div class="main_page" style="display: flex; flex-direction: row;">
+    <div class="main_page1">
+        <div class="image_pic" style="border: 0.5px solid gray; border-radius: 5px;width: 800px; height: 450px;margin-left: 25px; margin-top: 20px;">
+            <img src="{{img.image.url}}" style="height: 447px; width: 797px; margin-left: 1px; border-radius: 5px; margin-top: 1px;">
+        </div>
+        <div class="details" style="width: 800px; height: 250px;border-radius: 5px;border: 0.5px solid gray;margin-left: 25px; margin-top: 10px;">
+            <p style="font-size: 22px; font-family:sans-serif; margin-left: 20px;"><b>Details</b></p>
+            <span style="margin-left: 20px;">Category : {{img.category}}</span></br>
+            <span style="margin-left: 20px;">Sub-category : {{img.subcategoryname}}</span><br><hr>
+            <span style="margin-left: 20px;font-size: 22px;"><b>Description</b></span><br>
+            <span style="margin-left: 20px;;"> {{img.description}}</span><br>
+        </div>
+    </div>
+    <div class="main_page2">
+        <div class="price_tag" style="border: 0.5px solid gray; border-radius: 5px; margin-left: 18px ;width: 415px; height: 225px;display: flex; flex-direction: row; margin-top: 20px;">
+            <div>
+                <p style="font-size: 35px; margin-left: 20px; margin-top: 20px;"><b>&#8377; {{img.price}}</b></p>
+                <span style="margin-left: 20px; color: gray;font-size: 25px;">{{img.title}}</span></br></br>
+                <span style="margin-left: 20px;  font-size: 15px; color: gray;" >Address : {{img.address}}</span><br>
+                <span style="margin-left: 20px; font-size: 15px; color: gray; margin-left: 20px;">{{img.published_on}}</span></br>           
+            </div>
+        </div>
+        <div class="seller_descrip" style="border: 0.5px solid gray; border-radius: 5px; margin-left: 18px ;width: 415px; height: 250px;display: flex; flex-direction: row; margin-top: 20px;">
+            <div>
+                <p style="font-size: 25px; margin-left: 20px; margin-top: 20px;">Seller Description</p>
+                <img src="{% static './ava.jpg'%}" style="height: 70px; width: 70px; border-radius: 50%; margin-left: 20px;"><span style="font-size: 25px; margin-left: 10px;">{{img.user}}</span><br>
+                <br><button id="btn1"  type="button"><b>Buy</b></button>
+            </div>           
+
+        
+        </div>
+    </div>
+</div>
+{% endblock %}
