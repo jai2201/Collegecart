@@ -18,8 +18,8 @@ def registerView(request):
 
 @login_required
 def indexView(request):
-	img = item.objects.all()
-	final = img.order_by('-published_on')
+	img = item.objects.filter(available=True)
+	final = img.order_by('-published_on')[:16]
 	return render(request, 'index.html',{'final':final})
 
 @login_required
@@ -55,30 +55,30 @@ def detailView(request,item_id):
 @login_required
 def profileView(request):
 	logged_in_user = request.user
-	logged_in_user_items = item.objects.filter(user=logged_in_user)
+	logged_in_user_items = item.objects.filter(user=logged_in_user,available=True)
 	return render(request, 'profile.html', {'items':logged_in_user_items})
 
 @login_required
 def bookView(request):
-	book_items = item.objects.filter(category__name = 'Books')
+	book_items = item.objects.filter(category__name = 'Books',available=True)
 	return render(request, 'book.html', {'items':book_items})
 
 @login_required
 def electronicView(request):
-	electronic_items = item.objects.filter(category__name = 'Electronics items')
+	electronic_items = item.objects.filter(category__name = 'Electronics items',available=True)
 	return render(request, 'electronic.html', {'items':electronic_items})
 
 @login_required
 def sportsView(request):
-	sports_items = item.objects.filter(category__name = 'Sports material')
+	sports_items = item.objects.filter(category__name = 'Sports material',available=True)
 	return render(request, 'sport.html', {'items':sports_items})
 
 @login_required
 def musicView(request):
-	music_items = item.objects.filter(category__name = 'Music items')
+	music_items = item.objects.filter(category__name = 'Music items',available=True)
 	return render(request, 'musical.html', {'items':music_items})
 
 @login_required
 def hostelView(request):
-	hostel_items = item.objects.filter(category__name = 'Hostel stuff')
+	hostel_items = item.objects.filter(category__name = 'Hostel stuff',available=True)
 	return render(request, 'hostel.html', {'items':hostel_items})
