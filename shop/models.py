@@ -25,11 +25,3 @@ class item(models.Model):
 	address=models.CharField(max_length=1000,null=False, blank=False)
 	available = models.BooleanField(default=True)
 	published_on=models.DateTimeField(auto_now=True)
-
-
-
-
-
-
-
-

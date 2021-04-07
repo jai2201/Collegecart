@@ -59,7 +59,7 @@
             <div>
                 <p style="font-size: 25px; margin-left: 20px; margin-top: 20px;">Seller Description</p>
                 <img src="{% static './ava.jpg'%}" style="height: 70px; width: 70px; border-radius: 50%; margin-left: 20px;"><span style="font-size: 25px; margin-left: 10px;">{{img.user}}</span><br>
-                <br><button id="btn1"  type="button"><b>Buy</b></button>
+                <br><a href="http://127.0.0.1:8000/chat/chatwith{{img.user}}/?username={{user.username}}"><button id="btn1" type="button"><b>Buy</b></button></a>
             </div>           
 
         

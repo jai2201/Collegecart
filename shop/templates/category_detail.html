@@ -1,0 +1,24 @@
+{% extends 'index.html '%}
+
+{% block content %}
+    <h1 class="title">{{ category.name }}</h1>
+    <div class="row" style="margin-left: 5px;">
+		{% for x in cat %}
+			<div class="col-sm-3">
+                {% for y in del|lookup:x.id %}
+				<a href="detail/{{x.id}}" style="text-decoration: none; color: black;">
+				<div class="card m-2">
+				<center>
+				<small class="" style="text-align: center; font-size: 15px;;">{{y.category}}</small><br>
+				<img src="{{y.image.url}}" alt="" class="card" height="190px" width="265px" style="border: none;">
+				<small style="text-align: center; font-size: 15px;">{{y.title}}</small><br>
+				<small class="" style="text-align: center; font-size: 25px;"><b>&#8377;{{y.price}}</b></small><br>
+				<small class="" style="text-align: center;">{{y.published_on}}</small><br>
+				</center>
+				</div>
+				</a>
+                {% endfor %}
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

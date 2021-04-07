@@ -6,4 +6,3 @@ class ItemForm(forms.ModelForm):
 		model = item
 		fields = '__all__'
 		labels = {'image':''}
-
